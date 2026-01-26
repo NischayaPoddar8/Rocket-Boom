@@ -5,7 +5,7 @@ public class ObstacleCollision : MonoBehaviour
     public HealthBar healthBar;
     public AudioSource BackgroundAudio;
     public AudioSource GameOverAudio;
-    public GameObject gameOver;
+    public GameObject GameOverUI;
 
     int maxHealth = 100;
     bool isGameOver = false;
@@ -22,7 +22,7 @@ public class ObstacleCollision : MonoBehaviour
             isGameOver = true;
             if(BackgroundAudio.isPlaying) BackgroundAudio.Pause();
             Time.timeScale = 0f;
-            gameOver.SetActive(true);
+            GameOverUI.SetActive(true);
             GameOverAudio.Play();
             Debug.Log("Game Over!");
         }
